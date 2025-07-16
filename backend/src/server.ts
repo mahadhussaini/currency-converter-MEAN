@@ -4,6 +4,7 @@ import path from 'path';
 import helmet from 'helmet';
 import express, { Request, Response, NextFunction } from 'express';
 import logger from 'jet-logger';
+import cors from 'cors';
 
 import BaseRouter from '@src/routes';
 
@@ -20,8 +21,8 @@ import { NodeEnvs } from '@src/common/constants';
 
 const app = express();
 
-
-// **** Middleware **** //
+// Add CORS middleware FIRST
+app.use(cors());
 
 // Basic middleware
 app.use(express.json());

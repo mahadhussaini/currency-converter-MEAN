@@ -10,6 +10,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 interface Currency {
   code: string;
@@ -63,7 +64,7 @@ export class AppComponent {
 
   fetchCurrencies() {
     this.loading = true;
-    this.http.get<any>('/api/currencies').subscribe({
+    this.http.get<any>(`${environment.apiUrl}/api/currencies`).subscribe({
       next: (data) => {
         this.currencies = Object.entries(data.data).map(([code, info]: any) => ({
           code,
@@ -82,7 +83,7 @@ export class AppComponent {
     if (!this.from || !this.to || !this.amount) return;
     this.loading = true;
     this.error = '';
-    this.http.post<any>('/api/currencies/convert', {
+    this.http.post<any>(`${environment.apiUrl}/api/currencies/convert`, {
       from: this.from,
       to: this.to,
       amount: this.amount
