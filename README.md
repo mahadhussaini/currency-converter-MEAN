@@ -1,59 +1,66 @@
-# CurrencyConverterFrontend
+# Currency Converter (MEAN Stack)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+A modern, mobile-first currency converter app using Angular, Express, and TypeScript. Supports all currencies from FreeCurrencyAPI, with conversion history and persistent storage.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
+- Convert between any supported currencies (live rates)
+- Mobile-first, responsive UI (Angular Material + Bootstrap)
+- Loader and error handling for all requests
+- Conversion history with date/time, persisted in browser
+- Secure backend proxy for API key
+- Modern, beautiful UI with custom icons
 
-```bash
-ng serve
+---
+
+## Tech Stack
+- **Frontend:** Angular 17, Angular Material, Bootstrap, SCSS
+- **Backend:** Node.js, Express, TypeScript, Axios
+- **API:** [FreeCurrencyAPI](https://freecurrencyapi.com/docs/)
+
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+```sh
+git clone <your-repo-url>
+cd full-stack-assessment-MEAN
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+### 2. Setup Backend
+```sh
+cd currency-converter-backend
+npm install
+# Create .env file with your API key:
+echo CURRENCY_API_KEY=your_api_key_here > .env
+npm run dev
 ```
+- The backend runs on `http://localhost:3000`
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
+### 3. Setup Frontend
+```sh
+cd ../currency-converter-frontend
+npm install
+npm start
 ```
+- The frontend runs on `http://localhost:4200`
+- Proxy is set up for `/api` requests to the backend
 
-## Building
+---
 
-To build the project run:
+## Deployment
+- Deploy backend and frontend separately (e.g., Vercel, Netlify, Heroku)
+- Set `CURRENCY_API_KEY` as an environment variable in your backend deployment
+- Update frontend API URLs if deploying to production domains
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Screenshots
+![App Screenshot](./screenshot.png)
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+MIT 
