@@ -25,7 +25,7 @@ A modern, mobile-first currency converter app using Angular, Express, and TypeSc
 
 ### 1. Clone the Repository
 ```sh
-git clone <your-repo-url>
+git clone https://github.com/mahadhussaini/currency-converter-MEAN.git
 cd full-stack-assessment-MEAN
 ```
 
@@ -54,11 +54,6 @@ npm start
 - Deploy backend and frontend separately (e.g., Vercel, Netlify, Heroku)
 - Set `CURRENCY_API_KEY` as an environment variable in your backend deployment
 - Update frontend API URLs if deploying to production domains
-
----
-
-## Screenshots
-![App Screenshot](./screenshot.png)
 
 ---
 
