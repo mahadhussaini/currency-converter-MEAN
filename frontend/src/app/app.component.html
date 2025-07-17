@@ -55,7 +55,7 @@
     </button>
   </div>
   <div *ngIf="!history.length" class="text-center text-muted py-3">
-    No conversions yet.
+    No conversions yet!
   </div>
   <table *ngIf="history.length" mat-table [dataSource]="history" class="mat-elevation-z1 w-100">
     <ng-container matColumnDef="date">
